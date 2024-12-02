@@ -1,0 +1,191 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9fafb;
+    color: #333;
+    padding: 40px 20px;
+    line-height: 1.6;
+    font-size: 16px;
+    padding-top: 30px; /* Add padding to prevent header overlap */
+}
+
+/* Header Styling */
+h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    z-index: 10; /* Ensure the heading is above other elements */
+    position: relative; /* Needed for z-index to work */
+    margin-top: 30px; /* Add top margin to give space between sections */
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Round Container */
+.round-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+/* Match Card */
+.match-card {
+    background-color: #fff;
+    border: 1px solid #fff;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.match-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.match-card:active {
+    transform: translateY(4px);
+}
+
+.team-logo {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.match-card:hover .team-logo {
+    transform: scale(1.1);
+}
+
+.match-details {
+    font-size: 35px;
+    font-weight: 500;
+    margin: 15px 0;
+    color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .round-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row on tablets */
+    }
+
+    .match-card {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .round-container {
+        grid-template-columns: 1fr; /* 1 card per row on mobile */
+    }
+
+    .match-card {
+        width: 100%;
+        max-width: 90%;
+        padding: 15px;
+    }
+}
+
+/* Ensure proper layout of the round containers */
+section {
+    margin-bottom: 40px;
+}
+
+/* Prevent overlap between the header and content */
+section h2 {
+    margin-top: 30px; /* Add space between section and header */
+}
+
+/* Add padding around the body for better readability */
+body {
+    padding-top: 40px;
+}
+.team-name {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0 50px;  /* Adjust margin for spacing between logos */
+    color: #333;  /* Ensure the text color is visible */
+    text-transform: uppercase; /* Optional: Capitalize the team names */
+}
+/* Define the hover effect with a blue border shadow */
+.match-card:hover {
+    box-shadow: 0 0 10px 5px rgba(0, 0, 255, 0.6); /* Blue border shadow */
+    transform: scale(1.05); /* Slightly enlarge the card when hovered */
+    transition: box-shadow 0.3s, transform 0.3s; /* Smooth transition */
+}
+
+/* Optional: Slightly enlarge the card on hover */
+.match-card {
+    transition: transform 0.2s; /* Smooth transition for scale */
+}
+/* Set background image for the entire body */
+body {
+    background-image: url('background.jpeg'); /* Path to your image */
+    background-size: cover; /* Make the background cover the entire page */
+    background-position: center center; /* Center the image */
+    height: 100vh; /* Ensure the body takes full height of the viewport */
+    margin: 0; /* Remove default margin */
+}
+
+/* Optional: Add a slight overlay to improve text readability on top of the background */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3); /* Dark overlay */
+    z-index: -1; /* Place the overlay behind the content */
+}
